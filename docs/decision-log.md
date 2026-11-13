@@ -48,6 +48,8 @@
 - 서치어드바이저 리포트: 노출/클릭 **그래프 데이터를 xls·csv·png로 출력 가능**(사용자 확인). 그래프 기준이라 일별 합계일 가능성 높음 → `search_metric`의 `('', '')` 행에 해당. 검색어별/페이지별 제공 여부는 샘플 받아 확인 필요.
 - 네이버 이용약관 원문 확인 시도: policy.naver.com 은 도구에서 접근 차단, 검색으로도 원문 미확보 → 사용자가 직접 확인하기로. 확인할 부분: 금지행위 조항의 "자동화된 프로그램/수단" 문구, 서치어드바이저 별도 약관 유무.
 - 남은 작업(다음 날 이후): api 생성, Postgres 기동, Flyway 적용, 정적 서빙 설정, Google Cloud OAuth 설정.
+- GitHub 연결: `D:\dev\marketing-hub` → https://github.com/keyy1315/reachlio (**PUBLIC**, 브랜치 main). `docs/`에 plan-v1.0~v1.2, decision-log.md(이 로그 사본, 회사 시스템명 제거) 커밋·push. `web/`, `db/`, `docker-compose.yml`은 아직 미커밋(.gitignore 작성 후 올릴지 사용자 결정 대기).
+- 규칙: 이 로그를 수정하면 `docs/decision-log.md`도 같이 갱신(공개 저장소이므로 회사 관련 내용 제거 후).
 
 ## 참고 출처
 - https://www.innoforest.co.kr/report/NS00000366/
