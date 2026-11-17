@@ -24,6 +24,7 @@ class AuthConfig {
 		}));
 
 		http.authorizeHttpRequests(a -> a.anyRequest().authenticated())
+			.csrf(c -> c.spa()) // XSRF-TOKEN 쿠키 → X-XSRF-TOKEN 헤더 (React 화면용)
 			.oauth2Login(o -> o
 				.authorizationEndpoint(e -> e.authorizationRequestResolver(resolver))
 				.successHandler((req, res, auth) -> {

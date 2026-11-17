@@ -22,3 +22,7 @@ spring:
 
 app:
   credential-key: ${CREDENTIAL_KEY} # base64 32바이트, credential.secret_enc 암호화 키
+
+server:
+  error:
+    include-message: always # 400/409 거절 사유를 화면에 보여줌 (메시지는 사용자용 문구만 씀)
