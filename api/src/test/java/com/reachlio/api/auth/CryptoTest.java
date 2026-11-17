@@ -19,7 +19,7 @@ class CryptoTest {
 
 	@Test
 	void roundTripAndTamperDetection() {
-		var crypto = newCrypto();
+		Crypto crypto = newCrypto();
 		String a = crypto.encrypt("1//refresh-token");
 		assertEquals("1//refresh-token", crypto.decrypt(a));
 		assertNotEquals(a, crypto.encrypt("1//refresh-token")); // IV 가 매번 달라야 함

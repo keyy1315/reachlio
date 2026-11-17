@@ -48,7 +48,7 @@ public class Crypto {
 
 	private byte[] cipher(int mode, byte[] iv, byte[] input) {
 		try {
-			var c = Cipher.getInstance("AES/GCM/NoPadding");
+			Cipher c = Cipher.getInstance("AES/GCM/NoPadding");
 			c.init(mode, key, new GCMParameterSpec(TAG_BITS, iv));
 			return c.doFinal(input);
 		} catch (GeneralSecurityException e) {
