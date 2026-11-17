@@ -1,6 +1,8 @@
 spring:
   application:
     name: api
+  config:
+    import: optional:file:.env[.properties] # 로컬 비밀값 (git 제외)
   datasource:
     url: jdbc:postgresql://localhost:5432/marketing_hub
     username: hub
@@ -9,3 +11,14 @@ spring:
     hibernate:
       ddl-auto: validate # 스키마는 Flyway가 관리
     open-in-view: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope: openid, email, https://www.googleapis.com/auth/webmasters.readonly
+
+app:
+  credential-key: ${CREDENTIAL_KEY} # base64 32바이트, credential.secret_enc 암호화 키
