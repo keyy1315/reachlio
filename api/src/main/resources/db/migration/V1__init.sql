@@ -1,5 +1,4 @@
 -- marketing-hub 1단계 스키마 (PostgreSQL 17)
--- api 생성 후 Flyway V1__init.sql 로 옮긴다.
 
 -- 사용자: Google 로그인 기준
 CREATE TABLE users (

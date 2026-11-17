@@ -198,7 +198,7 @@
 - **수집 구조:** 엔진별 수집기(Google API / Bing API / Naver 업로드)가 같은 형태의 결과를 반환. 네이버 수집 방식이 바뀌어도 수집기만 교체
 - **보안:** 인증정보(Google refresh token, Bing API 키)는 앱에서 AES-GCM 암호화 후 저장. 사용자별 데이터 격리, 연동 해제·데이터 삭제, 로그 내 민감정보 차단. 네이버 비밀번호는 받지 않음
 
-### 1단계 데이터 모델 (`db/schema.sql`)
+### 1단계 데이터 모델 (`api/src/main/resources/db/migration/V1__init.sql`)
 
 | 테이블 | 역할 | 핵심 컬럼 |
 |---|---|---|
@@ -244,12 +244,12 @@
 ## 10. 당장 할 일
 
 - [x] 작업 폴더·프론트엔드(React Router v8) 생성, Postgres docker-compose 구성, JDK 25 준비
-- [x] 1단계 최소 DB 스키마 작성 (`db/schema.sql`)
+- [x] 1단계 최소 DB 스키마 작성 (Flyway `V1__init.sql`)
 - [ ] 서치어드바이저 리포트 내보내기 기능·형식 확인 및 샘플 확보
 - [x] 네이버 계정 2개로 중복 소유확인 테스트 → 불가
 - [ ] 서치어드바이저 고객센터 자동 조회 허용 여부 서면 문의
 - [ ] 사이트 빌더별 소유확인 메뉴·IndexNow 키 파일 지원 여부 조사
-- [ ] Spring Boot `api` 프로젝트 생성 (Flyway에 스키마 반영)
+- [x] Spring Boot `api` 프로젝트 생성 (Flyway에 스키마 반영)
 - [ ] Google 로그인 + Search Console 연동
 - [ ] Bing Webmaster API 연동
 - [ ] 네이버 업로드 수집기, IndexNow 제출, 사이트맵 점검

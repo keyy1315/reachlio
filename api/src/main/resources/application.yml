@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/marketing_hub
+    username: hub
+    password: hub # 로컬 개발 전용 (docker-compose.yml)
+  jpa:
+    hibernate:
+      ddl-auto: validate # 스키마는 Flyway가 관리
+    open-in-view: false

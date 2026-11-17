@@ -9,8 +9,3 @@
 .DS_Store
 Thumbs.db
 
-# Spring Boot (api/, Gradle)
-.gradle/
-api/build/
-api/bin/
-api/out/

@@ -83,6 +83,12 @@
   - 가이드 순서: ① GSC(URL 접두어 방식, GA4 있으면 GA로 소유확인, 없으면 HTML 태그, 사이트맵 제출, 서비스에서 Google 로그인) → ② Bing(**GSC에서 가져오기**로 소유확인 생략, API 키 발급) → ③ 네이버(HTML 태그, 사이트맵, 서비스엔 주소만 → 리포트 링크 자동).
   - 스크린샷은 최소(외부 UI가 자주 바뀜), 공식 도움말 링크 위주.
 
+## 11. 2026-11-17 api 프로젝트 생성
+- `api/`: Spring Boot 4.1.2, JDK 25(Gradle toolchain, `~/.jdks/jdk-25.0.5+8`, 시스템 JAVA_HOME 변경 없음), Gradle 9.9.1. 의존성: webmvc, data-jpa, postgresql, flyway, security-oauth2-client. 패키지 `com.reachlio.api`.
+- 스키마: `db/schema.sql` → `api/src/main/resources/db/migration/V1__init.sql`로 이동(`db/` 폴더 삭제). JPA `ddl-auto: validate`, `open-in-view: false`.
+- 로컬 Postgres(docker compose) 기동, `./gradlew test` 통과 → Flyway V1 적용 확인.
+- 실행: `JAVA_HOME=~/.jdks/jdk-25.0.5+8 ./gradlew bootRun` (api 폴더).
+
 ## 참고 출처
 - https://www.innoforest.co.kr/report/NS00000366/
 - https://www.lawtalk.co.kr/qna/654910
